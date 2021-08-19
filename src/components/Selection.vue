@@ -10,16 +10,14 @@
 					:icon="ui.$getIcon(objects.map[id])"
 					:label="ui.$getLabel(objects.map[id])"
 					:maxLabelWidth="maxLabelWidth"
-					:class="{'bg-primary': isSelected(id)}">
-					<span v-if="multiple" class="ml-2 text-small text-white-50 text-shadow"><i class="fas fa-plus"></i></span>
-				</Badge>
+					:class="{'bg-primary': isSelected(id)}"/>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-/* eslint-disable no-console */
+import Badge from '@mintjamsinc/vue-badge';
 
 export default {
 	props: {
@@ -31,6 +29,9 @@ export default {
 			'type': String,
 			'default': '10rem'
 		},
+	},
+	components: {
+		Badge,
 	},
 	data() {
 		return {
